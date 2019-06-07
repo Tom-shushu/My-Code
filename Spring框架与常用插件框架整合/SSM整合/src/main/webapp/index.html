@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css"
+	href="jquery-easyui-1.6.7/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.6.7/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="jquery-easyui-1.6.7/demo/demo.css">
+<script type="text/javascript" src="jquery-easyui-1.6.7/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-easyui-1.6.7/jquery.easyui.min.js"></script>
+</head>
+<body>
+
+	<table class="easyui-datagrid" title="用户信息" style="width:700px;height:250px"
+			data-options="singleSelect:true,collapsible:true,pagination:true,url:'user/finduser.spring',method:'get'">
+		<thead>
+			<tr>
+				<th data-options="field:'userId',width:80">编号</th>
+				<th data-options="field:'userName',width:100">姓名</th>
+				<th data-options="field:'userSex',width:80,align:'right'">性别</th>
+				<th data-options="field:'userAge',width:80,align:'right'">年龄</th>
+				<th data-options="field:'userAddress',width:250">住址</th>
+			</tr>
+		</thead>
+	</table>
+
+</body>
+<script type="text/javascript">
+		$(function(){
+			var pager = $('#dg').datagrid().datagrid('getPager');	// get the pager of datagrid
+			pager.pagination({
+				buttons:[{
+					iconCls:'icon-search',
+					handler:function(){
+						alert('search');
+					}
+				},{
+					iconCls:'icon-add',
+					handler:function(){
+						alert('add');
+					}
+				},{
+					iconCls:'icon-edit',
+					handler:function(){
+						alert('edit');
+					}
+				}]
+			});			
+		})
+	</script>
+</html>
